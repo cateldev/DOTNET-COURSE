@@ -3,9 +3,9 @@ namespace Csharp
 {
     public class ContaCorrente
     {
-        string? titular;
-        string? conta;
-        int agencia;
-        double saldo;
+        public string? titular;
+        public string? conta;
+        public int agencia;
+        public double saldo;
     }
 }
