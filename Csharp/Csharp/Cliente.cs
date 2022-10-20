@@ -8,6 +8,6 @@ namespace Csharp
     {
         public string? nome;
         public string? profissao;
-        public int cpf;
+        public string? cpf;
     }
 }
