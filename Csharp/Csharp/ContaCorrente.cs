@@ -6,13 +6,13 @@ namespace Csharp
         //public string? titular;
         //Transformamos essa propriedade pois criamos uma classe que sera responsavel por trazer essas informações
         public Cliente? titular;
-
+ 
         //Isso se chama principio da responsabilidade, onde uma classe nao deve ter tantas responsabilidades
         //separadas pelos seus temas, ou seja, uma classe deve tratar especificamente de somente um tema.
 
         public string? conta;
         public int agencia;
-        public double saldo;
+        private double saldo;
 
 
         //Metodos da classe ContaCorrente
@@ -38,6 +38,23 @@ namespace Csharp
         {
            this.Sacar(valor);
             destinatario.Depositar(valor);
+        }
+
+        public void SetSaldo(double valor)
+        {
+            if(valor < 0)
+            {
+                return;
+            }
+            else
+            {
+                this.saldo = valor;
+            }
+        }
+
+        public double GetSaldo()
+        {
+            return this.saldo;
         }
     }
 }
