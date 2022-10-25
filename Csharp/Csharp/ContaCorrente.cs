@@ -5,12 +5,18 @@ namespace Csharp
     {
         //public string? titular;
         //Transformamos essa propriedade pois criamos uma classe que sera responsavel por trazer essas informações
-        public Cliente? titular;
+        //public Cliente? titular; => Vamos transforma também usando as autoimplementadas:
+        public Cliente? Titular { get; set; }
  
         //Isso se chama principio da responsabilidade, onde uma classe nao deve ter tantas responsabilidades
         //separadas pelos seus temas, ou seja, uma classe deve tratar especificamente de somente um tema.
 
-        public string? conta;
+        //public string? conta; => Para a propriedade conta, usaremos o chamado de 'Propriedades Autoimplementadas'
+        //Deixando nossa propriedade da seguinte forma:
+        public string? Conta { get; set; }
+
+        //As 'Propriedades Autoimplementadas' servem para deixar o código mais enxuto.
+
         private int _agencia;
         //public int agencia; -> Essa propriedade, para nossa segurança, deve ser privada também porém podemos fazer o encapsulamento
         //pois fica inviavel criar metodos de Get e Set para todas as propriedades privadas.

@@ -6,9 +6,18 @@ namespace Csharp
 
     public class Cliente
     {
-        public string? nome;
-        public string? profissao;
-        public string? cpf;
+        //Vamos implementar as propriedades autoimplementadas nas propriedades abaixo:
+        /*  
+            public string? nome;
+            public string? profissao;
+            public string? cpf; 
+        */
+        //Deixará de ser como está acima e ficará assim:
+
+        public string? Nome { get; set; }
+        public string? Profissao { get; set; }   
+        public string? Cpf { get; set; }
+
 
         public static implicit operator Cliente(string v)
         {
