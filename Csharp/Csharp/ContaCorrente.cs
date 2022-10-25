@@ -11,25 +11,52 @@ namespace Csharp
         //separadas pelos seus temas, ou seja, uma classe deve tratar especificamente de somente um tema.
 
         public string? conta;
-        public int agencia;
-        private double saldo;
+        private int _agencia;
+        //public int agencia; -> Essa propriedade, para nossa segurança, deve ser privada também porém podemos fazer o encapsulamento
+        //pois fica inviavel criar metodos de Get e Set para todas as propriedades privadas.
+        //Dessa forma, com o encapsulamento podemos até fazer validações dentro dessas propriedades.
+        //A propriedade agencia ficará da seguinte forma:
+
+        public int Agencia
+        {
+            get
+            {
+                return this._agencia;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this._agencia = value;
+                }
+            }
+        }
+
+        //Vamos adotar esses encapsulamentos como padrão da nossa aplicação. Usaremos dessa forma ou por metodos.
+        //Para os campos internal e private usamos o prefixo _ (underscore).
+        //Exemplos: private bool _status; internal string _descricao;
+        //Por essa razão, vamos mudar nosso private int agencia; => private string _agencia;
+        //Faremos a mesma coisa para o private double saldo; => private double _saldo;
+        
+        
+        private double _saldo;
 
 
         //Metodos da classe ContaCorrente
         public void Depositar(double valor)
         {
-            this.saldo += valor;
+            this._saldo += valor;
         }
 
         public bool Sacar(double valor)
         {
-            if(saldo < valor)
+            if(_saldo < valor)
             {
                 return false;
             }
             else
             {
-                this.saldo -= valor;
+                this._saldo -= valor;
                 return true;
             }
         }
@@ -48,13 +75,13 @@ namespace Csharp
             }
             else
             {
-                this.saldo = valor;
+                this._saldo = valor;
             }
         }
 
         public double GetSaldo()
         {
-            return this.saldo;
+            return this._saldo;
         }
     }
 }
