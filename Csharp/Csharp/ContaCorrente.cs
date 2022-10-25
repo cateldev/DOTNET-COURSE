@@ -4,7 +4,8 @@ namespace Csharp
     public class ContaCorrente
     {
         //public string? titular;
-        //Removemos essa variavel para criar uma classe que sera responsavel por trazer essas informações
+        //Transformamos essa propriedade pois criamos uma classe que sera responsavel por trazer essas informações
+        public Cliente? titular;
 
         //Isso se chama principio da responsabilidade, onde uma classe nao deve ter tantas responsabilidades
         //separadas pelos seus temas, ou seja, uma classe deve tratar especificamente de somente um tema.

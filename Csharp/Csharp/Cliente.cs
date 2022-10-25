@@ -9,5 +9,10 @@ namespace Csharp
         public string? nome;
         public string? profissao;
         public string? cpf;
+
+        public static implicit operator Cliente(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
