@@ -89,5 +89,14 @@ namespace Csharp
         {
             return this._saldo;
         }
+
+        //Vamos criar nosso metodo construtor dos objetos ContaCorrente
+
+        public ContaCorrente(int Agencia, string Conta)
+        {
+            this.Agencia = Agencia;
+            this.Conta = Conta;
+
+        }
     }
 }
