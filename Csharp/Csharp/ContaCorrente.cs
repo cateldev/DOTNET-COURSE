@@ -47,6 +47,13 @@ namespace Csharp
         
         private double _saldo;
 
+        //Vamos criar uma propriedade para nos trazer o total de contas correntes criadas no sistema:
+        //Porém precisamos que essa propriedade seja tenha relação com a Classe ContaCorrente e não um objeto
+        //Para isso precisamos incluir antes do tipo de dado, "static".
+        //Isso significa que agora "TotalContas" pertecem a Classe ContaCorrente e não os objetos criados dela.
+        
+        public static int TotalContas { get; private set; }
+
 
         //Metodos da classe ContaCorrente
         public void Depositar(double valor)
@@ -96,7 +103,11 @@ namespace Csharp
         {
             this.Agencia = Agencia;
             this.Conta = Conta;
-
+            //Vamos adicionar no construtor, a soma que fara conta corrente +1, toda vez que uma conta for criada:
+            TotalContas ++;
+            //Podemos observar que no "TotalContas" não foi usado o "this". Isso ocorre pois o this serve para instanciar a
+            //propriedade do objeto e aqui não estamos tratando de uma propriedade de um objeto mas sim de uma propriedade
+            //da Classe ContaCorrente.
         }
     }
 }

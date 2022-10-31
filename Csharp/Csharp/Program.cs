@@ -69,3 +69,8 @@ ContaCorrente contaTesteMatheus = new ContaCorrente(10, "1010-x");
 //Dessa vez foi necessario passarmos parametros para nossa ContaCorrente, pois lá na Classe definimos isso
 Console.WriteLine(contaTesteMatheus.Agencia);
 Console.WriteLine(contaTesteMatheus.Conta);
+
+Cliente clienteTeste = new Cliente("Matheus", "Desenvolvedor", "4787218-12");
+Console.WriteLine(clienteTeste.Profissao);
+Console.WriteLine(clienteTeste.Nome);
+Console.WriteLine(clienteTeste.Cpf);

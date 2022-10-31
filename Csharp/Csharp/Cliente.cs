@@ -18,10 +18,21 @@ namespace Csharp
         public string? Profissao { get; set; }   
         public string? Cpf { get; set; }
 
+        public static int TotalClientes { get; private set; }
+
 
         public static implicit operator Cliente(string v)
         {
             throw new NotImplementedException();
+        }
+
+        public Cliente (string? nome, string? profissao, string? cpf)
+        {
+            Nome = nome;
+            Profissao = profissao;
+            Cpf = cpf;
+            TotalClientes ++;
+
         }
     }
 }
